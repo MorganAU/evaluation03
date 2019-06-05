@@ -10,7 +10,7 @@ define('RESERVATION_TEMPLATE', '
 	%s
 	<input type="hidden" name="id-evenement" value="%s" />
 	<p>
-		<input id="submit" type="submit" name="reservation" class="submit" value="Reserver" />
+		<input id="submit" type="submit" name="reservation" class="submit" value="" />
 	</p>
 </form>
 ');
