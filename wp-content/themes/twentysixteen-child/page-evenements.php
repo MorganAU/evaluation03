@@ -14,7 +14,7 @@ get_header(); ?>
 	<main id="main" class="site-main" role="main">
 		<?php
 		// Start the loop.
-
+        
         // Execute la requete sur les evenements
         $query = new WP_Query( array('post_type' => 'evenements', 'posts_per_page' => 5 ) );
 		while ( $query->have_posts() ) :

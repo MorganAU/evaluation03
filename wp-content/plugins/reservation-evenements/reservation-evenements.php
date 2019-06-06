@@ -22,11 +22,9 @@ add_action('template_redirect', 'reservation_evenements_reserver');
 function reservation_evenements_getform( $postId ) {
     $user = wp_get_current_user();
     $sEmail = $user->user_email;
-    $button = '';
+    $button = 'Réserver';
 
-    $aListeReservation = json_decode(get_post_meta($_POST['id-evenement'], 'reservations-evenement', true));
-    var_dump($aListeReservation);
-    var_dump($sEmail);
+    $aListeReservation = json_decode(get_post_meta($postId, 'reservations-evenement', true));
 
     if ($aListeReservation != null) {
         foreach ($aListeReservation as $value) {
@@ -34,8 +32,6 @@ function reservation_evenements_getform( $postId ) {
                 $button = 'Annuler';
             }
        }
-    } else {
-        $button = 'Réserver';
     }
 
     if (is_user_logged_in()) {
@@ -64,15 +60,13 @@ function reservation_evenements_reserver() {
             $aListeReservation = json_decode(get_post_meta($_POST['id-evenement'], 'reservations-evenement', true), true);
 
             foreach ($aListeReservation as $key => $value) {
-                if ($sEmail == $value[$key]) {
+
+                if ($value == $sEmail) {
                     $index = $key;
-                    var_dump($index);
+                    var_dump($key);
                 }
             }
 
-
-            var_dump($index);
-            var_dump($user->user_email);
             if ($aListeReservation===null) {
                 $aListeReservation = [$sEmail];
             } else {
@@ -80,11 +74,8 @@ function reservation_evenements_reserver() {
                     array_push($aListeReservation, $sEmail);
                 } else {
                     unset($aListeReservation[$index]);
-                    var_dump('expression');
                 }
             }
-
-            var_dump($temp); 
 
             update_post_meta( $_POST['id-evenement'], 'reservations-evenement', json_encode($aListeReservation) );
         }
