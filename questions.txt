@@ -34,17 +34,17 @@ réponse: add_action et add_filter. Qui permet soit d'ajouter une fonction  à u
 récupèrer le contenu pour la seconde
 
 13- Est-ce que l'API wordpress permet de modifier le site web ? quid de la sécurité ?
-réponse: Oui elle le permet. Cela dépend de ce qu'on fait avec le site mais entre les faille de l'extension MailPoet et 
-Révolution Slider, sachant que plus des 3/4 des attaques sont contre des sites WP, il y a dû progrès à faire
+réponse: Non elle ne le permet pas. Au niveau de la sécurité, il faut faire attention aux informations 
+qui transitent via l'API car elles sont publiques
 
 14- Qu'est ce que la wordpress loop ?
 réponse: La WP loop est du code PHP utilisé par WP pour afficher du contenu
 
 15- Quelles sont les fonctions principales du plugin reservation-evenements ?
-réponse: Gérer la connexion d'un utilisateur et de réserver un événement à une date donnée
+réponse: Vérfier la connexion d'un utilisateur et de réserver un événement à une date donnée
 
 16- A quoi sert la fonction wp_nonce_field() ?
-réponse: Il permet de vérifier si le contenu du fomrulaire provient bien du site actuel. C'est une bonne protection 
+réponse: Il permet de vérifier si le contenu du fomulaire provient bien du site actuel. C'est une bonne protection 
 
 17- Comment sont stockées les réservations ?
 réponse: Les réservations sont stockées dans la table postmeta et encodées en json
