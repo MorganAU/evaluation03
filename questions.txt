@@ -47,4 +47,4 @@ réponse: Gérer la connexion d'un utilisateur et de réserver un événement à
 réponse: Il permet de vérifier si le contenu du fomrulaire provient bien du site actuel. C'est une bonne protection 
 
 17- Comment sont stockées les réservations ?
-réponse: Dans un fichier json
+réponse: Les réservations sont stockées dans la table postmeta et encodées en json
